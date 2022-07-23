@@ -9,7 +9,6 @@
 \title{Gitflow}
 \author[R. Ahangarpour]{Reza Ahangarpour\\[2mm]\tiny{\texttt{ra19@tutanota.com}}}
 \institute{Sharif University of Technology}
-\titlegraphic{\includegraphics[width=20mm]{sharif.png}}
 \date{Jul 22 2022}
 \begin{document}
 	\begin{frame}
@@ -53,6 +52,25 @@
 	\begin{frame}
 		\frametitle{Gitflow Branches}
 		\framesubtitle{Main and Develop Branches}
+		\includegraphics<1>[width=4.7cm]{main.png}
+	\end{frame}
+	\subsection{Features}
+	\begin{frame}
+		\frametitle{Gitflow Branches}
+		\framesubtitle{Features Branches}
+		\includegraphics<1>[width=4.7cm]{features.png}
+	\end{frame}
+	\subsection{Release}
+	\begin{frame}
+		\frametitle{Gitflow Branches}
+		\framesubtitle{Release Branch}
+		\includegraphics<1>[width=4.7cm]{release.png}
+	\end{frame}
+	\subsection{Hotfix}
+	\begin{frame}
+		\frametitle{Gitflow Branches}
+		\framesubtitle{Hotfix Branch}
+		\includegraphics<1>[width=4.7cm]{hotfix.png}
 	\end{frame}
 	\begin{frame}
 		\frametitle{What's Still To Do?}
