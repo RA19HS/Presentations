@@ -68,7 +68,7 @@
 	\subsection{Feature}
 	\begin{frame}[fragile]
 		\frametitle{Gitflow in Command-Line}
-		\framesubtitle{Feature Branch}
+		\framesubtitle{Develop and Feature Branch}
 		\begin{columns}[t]
 			\column{.5\textwidth}
 			\begin{block}{Creation}
@@ -117,6 +117,11 @@ $ git branch -d hotfix
 				\end{verbatim}
 			\end{block}
 		\end{columns}
+	\end{frame}
+	\section{Reference}
+	\begin{frame}
+		\frametitle{Reference}
+		atlassian.com/git/
 	\end{frame}
 	\begin{frame}
 	\end{frame}
