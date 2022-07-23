@@ -1,22 +1,14 @@
 \documentclass[10pt]{beamer}
 \mode<beamer>{%
-	\usetheme[hideothersubsections,right,width=22mm]{Berkeley}
-	%\usetheme{Rochester}
-	%\useinnertheme{rounded}
+	\usetheme[hideothersubsections,right,width=22mm]{Rochester}
 	\usecolortheme{crane}
-	%\usecolortheme{rose}
 }
 \title{Gitflow}
 \author[R. Ahangarpour]{Reza Ahangarpour\\[2mm]\tiny{\texttt{ra19@tutanota.com}}}
-\institute{Sharif University of Technology}
-\date{Jul 22 2022}
+\date{Jul 23 2022}
 \begin{document}
 	\begin{frame}
 		\titlepage
-	\end{frame}
-	\begin{frame}
-		\frametitle{Outline}
-		\tableofcontents[pausesections]
 	\end{frame}
 	\section{Introduction}
 	\begin{frame}
@@ -52,72 +44,79 @@
 	\begin{frame}
 		\frametitle{Gitflow Branches}
 		\framesubtitle{Main and Develop Branches}
-		\includegraphics<1>[width=6.7cm]{main.png}
+		\includegraphics<1>[width=7.7cm]{main.png}
 	\end{frame}
 	\subsection{Features}
 	\begin{frame}
 		\frametitle{Gitflow Branches}
 		\framesubtitle{Features Branches}
-		\includegraphics<1>[width=6.7cm]{features.png}
+		\includegraphics<1>[width=7.7cm]{features.png}
 	\end{frame}
 	\subsection{Release}
 	\begin{frame}
 		\frametitle{Gitflow Branches}
 		\framesubtitle{Release Branch}
-		\includegraphics<1>[width=6.7cm]{release.png}
+		\includegraphics<1>[width=7.7cm]{release.png}
 	\end{frame}
 	\subsection{Hotfix}
 	\begin{frame}
 		\frametitle{Gitflow Branches}
 		\framesubtitle{Hotfix Branch}
-		\includegraphics<1>[width=6.7cm]{hotfix.png}
+		\includegraphics<1>[width=7.7cm]{hotfix.png}
 	\end{frame}
-	\begin{frame}
-		\frametitle{What's Still To Do?}
+	\section{Example}
+	\subsection{Feature}
+	\begin{frame}[fragile]
+		\frametitle{Gitflow in Command-Line}
+		\framesubtitle{Develop and Feature Branch}
 		\begin{columns}[t]
 			\column{.5\textwidth}
-			\begin{block}{Answered Question}
-				How many primes are there?
+			\begin{block}{Creation}
+				\small
+				\begin{verbatim}
+$ git checkout main
+$ git checkout -b develop
+$ git checkout -b feature
+				\end{verbatim}
 			\end{block}
 			\column{.5\textwidth}
-			\begin{block}{Open Question}
-				Is every even number the sum of two primes?
+			\begin{block}{Conclusion}
+				\small
+				\begin{verbatim}
+$ git checkout develop
+$ git merge feature
+$ git checkout main
+$ git merge develop
+$ git branch -d feature
+				\end{verbatim}
 			\end{block}
 		\end{columns}
 	\end{frame}
-	\subsection{Results}
-	\begin{frame}
-		\frametitle{There Is No Largest Prime Number}
-		\framesubtitle{The proof uses \texttt{reductio ad absurdum}.}
-		\begin{theorem}
-			There is no largest prime number.
-		\end{theorem}
-		\only<4->{The proof used \texttt{reductio ad absurdum}.}
-		\begin{proof}
-			\begin{enumerate}
-				\item<1-| alert@1> Suppose $p$ where the largest prime.
-				\item<2-> Let $\sigma$ be the product of the first $p$ numbers.
-				\item<3-> Then $\sigma+1$ is not divisible by any of them.
-				\item<1-> But $\sigma+1$ is greater than $1$, thus divisible by some prime
-					number not in the first $\sigma$ number.\qedhere
-			\end{enumerate}
-		\end{proof}
-	\end{frame}
+	\subsection{Hotfix}
 	\begin{frame}[fragile]
-		\frametitle{Sieve of Eratosthenes}
-		\framesubtitle{\texttt{+\#Prime Factors}}
-		\begin{block}{C Code}
-		\begin{verbatim}[xleftmargin=7mm]
-#define N 10000000
-int i=2,j,a[N];
-int main(){
-	for(;i<N;i++)if(!a[i])
-		for(j=i;j<N;j+=i)a[j]++;
-	return 0;
-}
-		\end{verbatim}
-		\end{block}
-		\visible<2>{Note the use of \texttt{a[j]++}.}
+		\frametitle{Gitflow in Command-Line}
+		\framesubtitle{Hotfix Branch}
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\begin{block}{Creation}
+				\small
+				\begin{verbatim}
+$ git checkout main
+$ git checkout -b hotfix
+				\end{verbatim}
+			\end{block}
+			\column{.5\textwidth}
+			\begin{block}{Conclusion}
+				\small
+				\begin{verbatim}
+$ git checkout develop
+$ git merge hotfix
+$ git checkout main
+$ git merge hotfix
+$ git branch -d hotfix
+				\end{verbatim}
+			\end{block}
+		\end{columns}
 	\end{frame}
 	\begin{frame}
 	\end{frame}
